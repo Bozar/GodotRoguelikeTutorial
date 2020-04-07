@@ -1,2 +1,3 @@
-# GodotRoguelikeTutorial
-A guide to build a simple Roguelike game with Godot engine.
+# Godot Roguelike Tutorial
+
+This repository is used to store tutorial code. Refer to [wiki page](https://github.com/Bozar/GodotRoguelikeTutorial.wiki.git) for more information.
