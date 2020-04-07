@@ -1,0 +1,30 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Godot Roguelike Tutorial"
+run/main_scene="res://scene/main/MainScene.tscn"
+config/icon="res://resource/icon.png"
+
+[display]
+
+window/size/width=800
+window/size/resizable=false
+window/energy_saving/keep_screen_on=false
+
+[rendering]
+
+environment/default_clear_color=Color( 0.156863, 0.172549, 0.203922, 1 )
