@@ -1,28 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://sprite/PC.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprite/ArrowX.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sprite/ArrowY.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sprite/Dwarf.tscn" type="PackedScene" id=4]
-[ext_resource path="res://sprite/Floor.tscn" type="PackedScene" id=5]
-[ext_resource path="res://sprite/Wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/main/InitWorld.gd" type="Script" id=1]
 
 [node name="MainScene" type="Node2D"]
 
-[node name="PC" parent="." instance=ExtResource( 1 )]
-position = Vector2( 100, 100 )
-
-[node name="ArrowX" parent="." instance=ExtResource( 2 )]
-position = Vector2( 100, 150 )
-
-[node name="ArrowY" parent="." instance=ExtResource( 3 )]
-position = Vector2( 100, 200 )
-
-[node name="Dwarf" parent="." instance=ExtResource( 4 )]
-position = Vector2( 150, 100 )
-
-[node name="Floor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 150, 150 )
-
-[node name="Wall" parent="." instance=ExtResource( 6 )]
-position = Vector2( 150, 200 )
+[node name="InitWorld" type="Node2D" parent="."]
+script = ExtResource( 1 )

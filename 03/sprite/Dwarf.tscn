@@ -9,4 +9,5 @@ region = Rect2( 96, 216, 24, 36 )
 
 [node name="Dwarf" type="Sprite"]
 modulate = Color( 0.670588, 0.698039, 0.74902, 1 )
+z_index = 1
 texture = SubResource( 1 )
