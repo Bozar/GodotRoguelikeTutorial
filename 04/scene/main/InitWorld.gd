@@ -1,6 +1,8 @@
 extends Node2D
 
 
+signal sprite_created(new_sprite)
+
 const Player := preload("res://sprite/PC.tscn")
 const Dwarf := preload("res://sprite/Dwarf.tscn")
 const Floor := preload("res://sprite/Floor.tscn")
@@ -12,13 +14,26 @@ var _new_ConvertCoord := preload("res://library/ConvertCoord.gd").new()
 var _new_DungeonSize := preload("res://library/DungeonSize.gd").new()
 var _new_GroupName := preload("res://library/GroupName.gd").new()
 
+var _initialized: bool = false
+
 
 func _ready() -> void:
-	_init_floor()
-	_init_wall()
-	_init_dwarf()
-	_init_PC()
-	_init_indicator()
+	return
+	# _init_floor()
+	# _init_wall()
+	# _init_dwarf()
+	# _init_PC()
+	# _init_indicator()
+
+
+func _process(_delta) -> void:
+	if not _initialized:
+		_initialized = true
+		_init_floor()
+		_init_wall()
+		_init_dwarf()
+		_init_PC()
+		_init_indicator()
 
 
 func _init_dwarf() -> void:
@@ -65,3 +80,4 @@ func _create_sprite(prefab: PackedScene, group: String, x: int, y: int,
 	new_sprite.add_to_group(group)
 
 	add_child(new_sprite)
+	emit_signal("sprite_created", new_sprite)
