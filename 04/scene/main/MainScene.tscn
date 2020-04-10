@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene/main/InitWorld.gd" type="Script" id=1]
 [ext_resource path="res://scene/gui/MainGUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/main/PCMove.gd" type="Script" id=3]
+[ext_resource path="res://scene/main/MainScene.gd" type="Script" id=4]
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="MainGUI" parent="." instance=ExtResource( 2 )]
 

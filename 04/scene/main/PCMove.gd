@@ -9,8 +9,6 @@ var _pc: Sprite
 
 
 func _ready() -> void:
-	var __ = get_node("../InitWorld").connect("sprite_created", self,
-			"_on_InitWorld_sprite_created")
 	set_process_unhandled_input(false)
 
 
