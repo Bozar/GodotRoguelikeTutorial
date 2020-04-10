@@ -13,27 +13,18 @@ const ArrowY := preload("res://sprite/ArrowY.tscn")
 var _new_ConvertCoord := preload("res://library/ConvertCoord.gd").new()
 var _new_DungeonSize := preload("res://library/DungeonSize.gd").new()
 var _new_GroupName := preload("res://library/GroupName.gd").new()
-
-var _initialized: bool = false
-
-
-func _ready() -> void:
-	return
-	# _init_floor()
-	# _init_wall()
-	# _init_dwarf()
-	# _init_PC()
-	# _init_indicator()
+var _new_InputName := preload("res://library/InputName.gd").new()
 
 
-func _process(_delta) -> void:
-	if not _initialized:
-		_initialized = true
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(_new_InputName.INIT_WORLD):
 		_init_floor()
 		_init_wall()
-		_init_dwarf()
 		_init_PC()
+		_init_dwarf()
 		_init_indicator()
+
+		set_process_unhandled_input(false)
 
 
 func _init_dwarf() -> void:

@@ -11,12 +11,10 @@ var _pc: Sprite
 func _ready() -> void:
 	var __ = get_node("../InitWorld").connect("sprite_created", self,
 			"_on_InitWorld_sprite_created")
-	# print("connect: {0}".format([__]))
+	set_process_unhandled_input(false)
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	# print("pc: {0}".format([_pc]))
-
 	var source: Array = _new_ConvertCoord.vector_to_array(_pc.position)
 	var x: int = source[0]
 	var y: int = source[1]
@@ -36,3 +34,4 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_InitWorld_sprite_created(new_sprite: Sprite) -> void:
 	if new_sprite.is_in_group(_new_GroupName.PC):
 		_pc = new_sprite
+		set_process_unhandled_input(true)
