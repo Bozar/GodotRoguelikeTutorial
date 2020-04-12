@@ -12,3 +12,5 @@ func _ready():
 
 	__ = get_node("Schedule").connect("turn_started", get_node("PCMove"),
 			"_on_Schedule_turn_started")
+	__ = get_node("Schedule").connect("turn_started", get_node("EnemyAI"),
+			"_on_Schedule_turn_started")

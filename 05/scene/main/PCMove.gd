@@ -39,8 +39,7 @@ func _on_InitWorld_sprite_created(new_sprite: Sprite) -> void:
 func _on_Schedule_turn_started(current_sprite: Sprite) -> void:
 	if current_sprite.is_in_group(_new_GroupName.PC):
 		set_process_unhandled_input(true)
-	else:
-		print(current_sprite.name)
+	print("{0}: Start turn.".format([current_sprite.name]))
 
 
 func _is_move_input(event: InputEvent) -> bool:
