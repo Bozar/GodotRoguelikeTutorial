@@ -1,6 +1,10 @@
 extends Node2D
 
 
+const Schedule := preload("res://scene/main/Schedule.gd")
+
+var _ref_Schedule: Schedule
+
 var _new_ConvertCoord := preload("res://library/ConvertCoord.gd").new()
 var _new_InputName := preload("res://library/InputName.gd").new()
 var _new_GroupName := preload("res://library/GroupName.gd").new()
@@ -27,7 +31,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_pc.position = _new_ConvertCoord.index_to_vector(target[0], target[1])
 
 		set_process_unhandled_input(false)
-		get_node("../Schedule").end_turn()
+		_ref_Schedule.end_turn()
 
 
 func _on_InitWorld_sprite_created(new_sprite: Sprite) -> void:
