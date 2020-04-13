@@ -55,6 +55,8 @@ func _is_move_input(event: InputEvent) -> bool:
 func _try_move(x: int, y: int) -> void:
 	if not _ref_DungeonBoard.is_inside_dungeon(x, y):
 		print("Cannot leave dungeon.")
+	elif _ref_DungeonBoard.has_sprite(_new_GroupName.WALL, x, y):
+		print("Cannot pass wall.")
 	else:
 		set_process_unhandled_input(false)
 		_pc.position = _new_ConvertCoord.index_to_vector(x, y)
