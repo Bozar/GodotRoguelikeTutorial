@@ -43,6 +43,11 @@ func _on_InitWorld_sprite_created(new_sprite: Sprite) -> void:
 	_sprite_dict[group][pos[0]][pos[1]] = new_sprite
 
 
+func _on_RemoveObject_sprite_removed(_sprite: Sprite, group_name: String,
+		x: int, y: int) -> void:
+	_sprite_dict[group_name][x][y] = null
+
+
 func _init_dict() -> void:
 	var groups = [_new_GroupName.DWARF, _new_GroupName.WALL]
 
