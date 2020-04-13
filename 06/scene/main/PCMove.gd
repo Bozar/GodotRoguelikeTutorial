@@ -1,8 +1,10 @@
 extends Node2D
 
 
+const DungeonBoard := preload("res://scene/main/DungeonBoard.gd")
 const Schedule := preload("res://scene/main/Schedule.gd")
 
+var _ref_DungeonBoard: DungeonBoard
 var _ref_Schedule: Schedule
 
 var _new_ConvertCoord := preload("res://library/ConvertCoord.gd").new()
@@ -28,10 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if _is_move_input(event):
 		target = _get_new_position(event, source)
-		_pc.position = _new_ConvertCoord.index_to_vector(target[0], target[1])
-
-		set_process_unhandled_input(false)
-		_ref_Schedule.end_turn()
+		_try_move(target[0], target[1])
 
 
 func _on_InitWorld_sprite_created(new_sprite: Sprite) -> void:
@@ -43,7 +42,7 @@ func _on_InitWorld_sprite_created(new_sprite: Sprite) -> void:
 func _on_Schedule_turn_started(current_sprite: Sprite) -> void:
 	if current_sprite.is_in_group(_new_GroupName.PC):
 		set_process_unhandled_input(true)
-	print("{0}: Start turn.".format([current_sprite.name]))
+	# print("{0}: Start turn.".format([current_sprite.name]))
 
 
 func _is_move_input(event: InputEvent) -> bool:
@@ -51,6 +50,15 @@ func _is_move_input(event: InputEvent) -> bool:
 		if event.is_action_pressed(m):
 			return true
 	return false
+
+
+func _try_move(x: int, y: int) -> void:
+	if not _ref_DungeonBoard.is_inside_dungeon(x, y):
+		print("Cannot leave dungeon.")
+	else:
+		set_process_unhandled_input(false)
+		_pc.position = _new_ConvertCoord.index_to_vector(x, y)
+		_ref_Schedule.end_turn()
 
 
 func _get_new_position(event: InputEvent, source: Array) -> Array:

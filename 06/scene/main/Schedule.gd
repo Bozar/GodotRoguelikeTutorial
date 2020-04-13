@@ -10,7 +10,7 @@ var _pointer: int = 0
 
 
 func end_turn() -> void:
-	print("{0}: End turn.".format([_get_current().name]))
+	# print("{0}: End turn.".format([_get_current().name]))
 	_goto_next()
 	emit_signal("turn_started", _get_current())
 

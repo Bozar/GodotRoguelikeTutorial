@@ -17,3 +17,5 @@ func _ready():
 
 	get_node("PCMove")._ref_Schedule = get_node("Schedule")
 	get_node("EnemyAI")._ref_Schedule = get_node("Schedule")
+
+	get_node("PCMove")._ref_DungeonBoard = get_node("DungeonBoard")
