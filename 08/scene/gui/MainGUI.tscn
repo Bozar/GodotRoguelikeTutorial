@@ -13,16 +13,22 @@ margin_bottom = 600.0
 
 [node name="Modeline" type="Label" parent="MainHBox"]
 margin_top = 293.0
+margin_right = 60.0
 margin_bottom = 307.0
+text = "Modeline"
 
 [node name="SidebarVBox" type="VBoxContainer" parent="MainHBox"]
-margin_left = 4.0
-margin_right = 4.0
+margin_left = 64.0
+margin_right = 108.0
 margin_bottom = 600.0
 
 [node name="Turn" type="Label" parent="MainHBox/SidebarVBox"]
+margin_right = 44.0
 margin_bottom = 14.0
+text = "Turn: 4"
 
 [node name="Help" type="Label" parent="MainHBox/SidebarVBox"]
 margin_top = 18.0
+margin_right = 44.0
 margin_bottom = 32.0
+text = "Demo"

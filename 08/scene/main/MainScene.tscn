@@ -14,6 +14,10 @@
 script = ExtResource( 4 )
 
 [node name="MainGUI" parent="." instance=ExtResource( 2 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 780.0
+margin_bottom = 580.0
 
 [node name="InitWorld" type="Node2D" parent="."]
 script = ExtResource( 1 )
