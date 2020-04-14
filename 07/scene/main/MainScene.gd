@@ -11,6 +11,8 @@ func _ready():
 			"_on_InitWorld_sprite_created")
 	__ = get_node("InitWorld").connect("sprite_created",
 			get_node("DungeonBoard"), "_on_InitWorld_sprite_created")
+	__ = get_node("InitWorld").connect("sprite_created",
+			get_node("EnemyAI"), "_on_InitWorld_sprite_created")
 
 	__ = get_node("RemoveObject").connect("sprite_removed", get_node("Schedule"),
 			"_on_RemoveObject_sprite_removed")
