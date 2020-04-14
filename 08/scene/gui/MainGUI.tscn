@@ -14,22 +14,28 @@ margin_right = 800.0
 margin_bottom = 600.0
 
 [node name="Modeline" parent="MainHBox" instance=ExtResource( 1 )]
-margin_top = 284.0
-margin_right = 120.0
-margin_bottom = 315.0
+margin_top = 569.0
+margin_right = 616.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
 text = "Modeline"
 
 [node name="SidebarVBox" type="VBoxContainer" parent="MainHBox"]
-margin_left = 124.0
-margin_right = 244.0
+margin_left = 620.0
+margin_right = 800.0
 margin_bottom = 600.0
+rect_min_size = Vector2( 180, 0 )
 
 [node name="Turn" parent="MainHBox/SidebarVBox" instance=ExtResource( 1 )]
-margin_right = 120.0
+margin_right = 180.0
+margin_bottom = 565.0
+size_flags_vertical = 3
 text = "Turn: 14"
 
 [node name="Help" parent="MainHBox/SidebarVBox" instance=ExtResource( 1 )]
-margin_top = 35.0
-margin_right = 120.0
-margin_bottom = 66.0
+margin_top = 569.0
+margin_right = 180.0
+margin_bottom = 600.0
+size_flags_vertical = 1
 text = "Help"
