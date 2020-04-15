@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scene/main/InitWorld.gd" type="Script" id=1]
+[ext_resource path="res://scene/gui/MainGUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/main/PCMove.gd" type="Script" id=3]
+[ext_resource path="res://scene/main/MainScene.gd" type="Script" id=4]
+[ext_resource path="res://scene/main/Schedule.gd" type="Script" id=5]
+[ext_resource path="res://scene/main/EnemyAI.gd" type="Script" id=6]
+[ext_resource path="res://scene/main/DungeonBoard.gd" type="Script" id=7]
+[ext_resource path="res://scene/main/PCAttack.gd" type="Script" id=8]
+[ext_resource path="res://scene/main/RemoveObject.gd" type="Script" id=9]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="MainGUI" parent="." instance=ExtResource( 2 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 780.0
+margin_bottom = 580.0
+
+[node name="InitWorld" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="PCMove" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="PCAttack" type="Node2D" parent="PCMove"]
+script = ExtResource( 8 )
+
+[node name="Schedule" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="EnemyAI" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="DungeonBoard" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="RemoveObject" type="Node2D" parent="."]
+script = ExtResource( 9 )
