@@ -1,6 +1,8 @@
 extends Node2D
 
 
+signal enemy_warned(message)
+
 const Schedule := preload("res://scene/main/Schedule.gd")
 
 var _ref_Schedule: Schedule
@@ -16,7 +18,7 @@ func _on_Schedule_turn_started(current_sprite: Sprite) -> void:
 		return
 
 	if _pc_is_close(_pc, current_sprite):
-		print("Too close!")
+		emit_signal("enemy_warned", "Urist McRogueliker is scared!")
 	_ref_Schedule.end_turn()
 
 

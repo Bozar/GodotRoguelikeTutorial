@@ -1,6 +1,8 @@
 extends Node2D
 
 
+signal pc_attacked(message)
+
 const DungeonBoard := preload("res://scene/main/DungeonBoard.gd")
 const RemoveObject := preload("res://scene/main/RemoveObject.gd")
 const Schedule := preload("res://scene/main/Schedule.gd")
@@ -15,4 +17,4 @@ func attack(group_name: String, x: int, y: int) -> void:
 		return
 	_ref_RemoveObject.remove(group_name, x, y)
 	_ref_Schedule.end_turn()
-	print("Attack.")
+	emit_signal("pc_attacked", "You kill Urist McRogueliker! :(")

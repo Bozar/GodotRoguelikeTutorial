@@ -1,6 +1,8 @@
 extends Node2D
 
 
+signal pc_moved(message)
+
 const DungeonBoard := preload("res://scene/main/DungeonBoard.gd")
 const Schedule := preload("res://scene/main/Schedule.gd")
 
@@ -56,9 +58,9 @@ func _is_move_input(event: InputEvent) -> bool:
 
 func _try_move(x: int, y: int) -> void:
 	if not _ref_DungeonBoard.is_inside_dungeon(x, y):
-		print("Cannot leave dungeon.")
+		emit_signal("pc_moved", "You cannot leave the map.")
 	elif _ref_DungeonBoard.has_sprite(_new_GroupName.WALL, x, y):
-		print("Cannot pass wall.")
+		emit_signal("pc_moved", "You bump into wall.")
 	elif _ref_DungeonBoard.has_sprite(_new_GroupName.DWARF, x, y):
 		set_process_unhandled_input(false)
 		get_node(PC_ATTACK).attack(_new_GroupName.DWARF, x, y)

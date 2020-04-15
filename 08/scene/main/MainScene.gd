@@ -27,6 +27,16 @@ func _ready():
 			get_node("MainGUI/MainHBox/SidebarVBox"),
 			"_on_Schedule_turn_started")
 
+	__ = get_node("PCMove").connect("pc_moved",
+			get_node("MainGUI/MainHBox/Modeline"), "_on_PCMove_pc_moved")
+	__ = get_node("PCMove/PCAttack").connect("pc_attacked",
+			get_node("MainGUI/MainHBox/Modeline"), "_on_PCAttack_pc_attacked")
+	__ = get_node("EnemyAI").connect("enemy_warned",
+			get_node("MainGUI/MainHBox/Modeline"), "_on_EnemyAI_enemy_warned")
+	__ = get_node("Schedule").connect("turn_ended",
+			get_node("MainGUI/MainHBox/Modeline"), "_on_Schedule_turn_ended")
+
+
 	get_node("PCMove")._ref_Schedule = get_node("Schedule")
 	get_node("EnemyAI")._ref_Schedule = get_node("Schedule")
 	get_node("PCMove/PCAttack")._ref_Schedule = get_node("Schedule")
