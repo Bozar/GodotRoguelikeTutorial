@@ -44,5 +44,6 @@ func _ready():
 	get_node("PCMove")._ref_DungeonBoard = get_node("DungeonBoard")
 	get_node("PCMove/PCAttack")._ref_DungeonBoard = get_node("DungeonBoard")
 	get_node("RemoveObject")._ref_DungeonBoard = get_node("DungeonBoard")
+	get_node("InitWorld")._ref_DungeonBoard = get_node("DungeonBoard")
 
 	get_node("PCMove/PCAttack")._ref_RemoveObject = get_node("RemoveObject")
