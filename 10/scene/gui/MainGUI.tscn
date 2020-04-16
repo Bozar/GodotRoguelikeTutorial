@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprite/GUIText.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/gui/SidebarVBox.gd" type="Script" id=2]
+[ext_resource path="res://scene/gui/Modeline.gd" type="Script" id=3]
+
+[node name="MainGUI" type="MarginContainer"]
+margin_right = 800.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainHBox" type="HBoxContainer" parent="."]
+margin_right = 800.0
+margin_bottom = 600.0
+
+[node name="Modeline" parent="MainHBox" instance=ExtResource( 1 )]
+margin_top = 569.0
+margin_right = 616.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Modeline"
+script = ExtResource( 3 )
+
+[node name="SidebarVBox" type="VBoxContainer" parent="MainHBox"]
+margin_left = 620.0
+margin_right = 800.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 180, 0 )
+script = ExtResource( 2 )
+
+[node name="Turn" parent="MainHBox/SidebarVBox" instance=ExtResource( 1 )]
+margin_right = 180.0
+margin_bottom = 565.0
+size_flags_vertical = 3
+text = "Turn: 14"
+
+[node name="Help" parent="MainHBox/SidebarVBox" instance=ExtResource( 1 )]
+margin_top = 569.0
+margin_right = 180.0
+margin_bottom = 600.0
+size_flags_vertical = 1
+text = "Help"
