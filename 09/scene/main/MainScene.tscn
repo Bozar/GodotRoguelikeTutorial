@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scene/main/InitWorld.gd" type="Script" id=1]
 [ext_resource path="res://scene/gui/MainGUI.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scene/main/DungeonBoard.gd" type="Script" id=7]
 [ext_resource path="res://scene/main/PCAttack.gd" type="Script" id=8]
 [ext_resource path="res://scene/main/RemoveObject.gd" type="Script" id=9]
+[ext_resource path="res://scene/main/ReloadGame.gd" type="Script" id=10]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 4 )
@@ -27,6 +28,9 @@ script = ExtResource( 3 )
 
 [node name="PCAttack" type="Node2D" parent="PCMove"]
 script = ExtResource( 8 )
+
+[node name="ReloadGame" type="Node2D" parent="PCMove"]
+script = ExtResource( 10 )
 
 [node name="Schedule" type="Node2D" parent="."]
 script = ExtResource( 5 )

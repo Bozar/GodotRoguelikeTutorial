@@ -4,3 +4,4 @@ const MOVE_UP: String = "move_up"
 const MOVE_DOWN: String = "move_down"
 
 const INIT_WORLD: String = "init_world"
+const RELOAD: String = "reload"
